@@ -1,5 +1,7 @@
 # Real-Time Voice Chat Translator
 
+[한국어 README](README_KR.md)
+
 A real-time voice chat translation application with **cross-recording speaker identification**.  
 Each person records separately, and the system automatically recognizes who is speaking across multiple recordings using voice fingerprint comparison.
 
