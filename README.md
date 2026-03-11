@@ -1,3 +1,6 @@
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/f29d771f-5603-4372-85b3-ef50bce04624" />
+
+
 # Real-Time Voice Chat Translator
 
 [한국어 README](README_KR.md)
