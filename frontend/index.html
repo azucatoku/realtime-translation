@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Chat Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="chat-container">
+        <header class="header-box">
+            <h1>CHAT TRANSLATOR</h1>
+            <p>AUTO DIARIZATION & TRANSLATION</p>
+        </header>
+
+        <main class="chat-history" id="chatHistory">
+            <!-- Messages will be injected here dynamically -->
+            <div class="message system-msg">
+                <div class="msg-content">READY: PRESS START TO RECORD MULTIPLE SPEAKERS.</div>
+            </div>
+        </main>
+
+        <div class="controls-area">
+            <div class="status-indicator">
+                <span id="statusText">WAITING</span>
+                <div class="loader-dot hidden" id="recordingDot"></div>
+            </div>
+
+            <button id="recordButton" class="btn-primary">START CONVERSATION</button>
+            <button id="resetButton" class="btn-reset">RESET SPEAKERS</button>
+            <div class="error-msg hidden" id="errorMsg"></div>
+        </div>
+    </div>
+
+    <!-- We don't use a visible audio element anymore, we play incoming base64 directly via JS -->
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+whisperx
+deep-translator
+edge-tts
+pyannote.audio
+torchaudio
+pandas
+pydub
+SpeechRecognition
+pygame
+python-dotenv
