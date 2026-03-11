@@ -161,6 +161,20 @@ Open `http://localhost:8080` in your browser.
 
 ---
 
+## Limitations
+
+- **Speaker memory is volatile.** All speaker embeddings are stored in server memory (RAM). Restarting the backend server erases all speaker identity data. There is no persistent storage.
+- **Single-speaker-per-recording assumption.** Each recording is treated as one person speaking. If two people speak in the same recording, only one speaker ID is assigned to the entire clip.
+- **Short audio degrades accuracy.** Recordings under 2-3 seconds may produce unreliable speech recognition and speaker embeddings. WhisperX also warns that language detection is less accurate for audio shorter than 30 seconds.
+- **Korean and English only.** The translation pipeline currently supports only Korean-to-English and English-to-Korean. Other languages detected by Whisper will default to English translation output.
+- **Cosine similarity threshold is fixed.** The speaker matching threshold (0.75) is hardcoded. In noisy environments or with similar-sounding voices, this may cause misidentification. Tuning may be required per use case.
+- **No concurrent user support.** The speaker memory is global (single dictionary). Multiple users accessing the server simultaneously will share the same speaker pool, leading to cross-contamination of speaker identities.
+- **GPU memory requirements.** Three AI models (WhisperX large-v3, pyannote embedding, pyannote diarization) are loaded simultaneously, requiring approximately 6-8 GB of VRAM.
+- **Alignment model is loaded per-request.** The WhisperX alignment model is loaded and discarded on every request, which adds latency. Pre-caching alignment models for target languages would improve performance.
+- **No streaming support.** Audio must be fully recorded before processing. Real-time streaming transcription and translation are not implemented.
+
+---
+
 ## License
 
 This project is for educational and personal use.
